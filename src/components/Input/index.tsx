@@ -44,7 +44,7 @@ const Input = ({ name, icon: Icon, ...rest }: IInputProps) => {
   }, [fieldName, registerField]);
 
   return (
-    <Container isFilled={isFilled} isFocused={isFocused}>
+    <Container $isFilled={isFilled} $isFocused={isFocused}>
       {Icon && <Icon size={20} />}
 
       <input
