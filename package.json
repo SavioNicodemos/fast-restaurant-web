@@ -1,5 +1,5 @@
 {
-  "name": "go-restaurant",
+  "name": "fast-restaurant",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,8 @@
     "ts:check": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "cypress": "npx cypress open"
   },
   "dependencies": {
     "@unform/core": "^2.1.6",
@@ -41,6 +42,7 @@
     "@vitest/coverage-v8": "^1.1.1",
     "axios-mock-adapter": "^1.22.0",
     "c8": "^9.0.0",
+    "cypress": "^13.6.2",
     "jsdom": "^23.0.1",
     "json-server": "^0.17.4",
     "ts-jest": "^29.1.1",
