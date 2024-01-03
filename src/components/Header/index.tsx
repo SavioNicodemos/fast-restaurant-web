@@ -14,6 +14,7 @@ const Header = ({ openModal }: IHeaderProps) => (
       <nav>
         <div>
           <button
+            data-testid='add-new-food-button'
             type='button'
             onClick={() => {
               openModal();

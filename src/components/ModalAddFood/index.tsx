@@ -43,12 +43,12 @@ const ModalAddFood = ({ isOpen, setIsOpen, handleAddFood }: IModalProps) => {
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <Form ref={formRef} onSubmit={handleSubmit} placeholder=''>
         <h1>Novo Prato</h1>
-        <Input name='image' placeholder='Cole o link aqui' />
+        <Input name='image' data-testid="add-food-form-image" placeholder='Cole o link aqui' />
 
-        <Input name='name' placeholder='Ex: Moda Italiana' />
-        <Input name='price' placeholder='Ex: 19.90' />
+        <Input name='name' data-testid="add-food-form-name" placeholder='Ex: Moda Italiana' />
+        <Input name='price' data-testid="add-food-form-price" placeholder='Ex: 19.90' />
 
-        <Input name='description' placeholder='Descrição' />
+        <Input name='description' data-testid="add-food-form-description" placeholder='Descrição' />
         <button type='submit' data-testid='add-food-button'>
           <p className='text'>Adicionar Prato</p>
           <div className='icon'>
