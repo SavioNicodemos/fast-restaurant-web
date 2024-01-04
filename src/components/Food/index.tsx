@@ -30,9 +30,9 @@ const Food = ({ food, handleDelete, handleEditFood }: IProps) => {
   }
 
   return (
-    <Container $available={isAvailable}>
+    <Container $available={isAvailable} data-testid={`food-${food.id}`}>
       <header>
-        <img src={food.image} alt={food.name} />
+        <img src={food.image} style={{ maxWidth: 360 }} alt={food.name} />
       </header>
       <section className='body'>
         <h2>{food.name}</h2>

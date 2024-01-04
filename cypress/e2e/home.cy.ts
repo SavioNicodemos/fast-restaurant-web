@@ -35,4 +35,26 @@ describe("Page: Home", () => {
 
     cy.get('[data-testid="foods-list"]').children().should("have.length", 4);
   });
+
+  it("should delete a food", () => {
+    cy.intercept("DELETE", "**/foods/1", { statusCode: 204, body: {} });
+
+    cy.get('[data-testid="foods-list"]').children().should("have.length", 3);
+    cy.get('[data-testid="remove-food-1"]').click();
+    cy.get('[data-testid="foods-list"]').children().should("have.length", 2);
+  });
+
+  it("should edit a food", () => {
+    cy.get('[data-testid="edit-food-1"]').click();
+
+    cy.get('[data-testid="edit-food-form-image"]').clear().type(imageLink);
+    cy.get('[data-testid="edit-food-form-name"]').clear().type("Lasanha");
+    cy.get('[data-testid="edit-food-form-price"]').clear().type("10.00");
+    cy.get('[data-testid="edit-food-form-description"]').clear().type("test");
+    cy.get('[data-testid="edit-food-button"]').click();
+
+    cy.get('[data-testid="food-1"]')
+      .should("contain.text", "Lasanha")
+      .and("contain.text", "test");
+  });
 });
